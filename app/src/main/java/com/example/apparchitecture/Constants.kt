@@ -7,6 +7,7 @@ import com.example.apparchitecture.room.AppDatabase
  */
 class Constants {
     companion object {
-       lateinit var appDatabase: AppDatabase
+        // todo 需要单例实现
+        lateinit var appDatabase: AppDatabase
     }
 }

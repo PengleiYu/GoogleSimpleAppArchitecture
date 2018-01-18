@@ -11,7 +11,7 @@ import android.arch.persistence.room.PrimaryKey;
 @SuppressWarnings("WeakerAccess")
 @Entity
 public class User {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int uid;
     @ColumnInfo(name = "fist_name")
     private String firstName;
@@ -41,4 +41,12 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() { return uid + ": " + firstName + " . " + lastName; }
 }

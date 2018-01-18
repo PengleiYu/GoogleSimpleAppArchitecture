@@ -11,7 +11,9 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         val dbName = "test.db"
-        Constants.appDatabase = Room.databaseBuilder(this, AppDatabase::class.java, dbName)
+        Constants.appDatabase = Room
+                .databaseBuilder(this, AppDatabase::class.java, dbName)
+                .fallbackToDestructiveMigration()
                 .build()
     }
 }
